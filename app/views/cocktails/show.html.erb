@@ -1,6 +1,6 @@
 <h2><%= @cocktail.name %></h2>
 
-<%= image_tag @post.picture.url(:medium) %>
+<%= image_tag @cocktail.picture.url(:medium) %>
 
 <ul>
   <% @cocktail.doses.each do |dose| %>
