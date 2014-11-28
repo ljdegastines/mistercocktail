@@ -3,8 +3,9 @@
 <% end %>
 
 <h1>List of cocktails</h1>
-<%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-primary" %>
 <% @cocktails.each do |cocktail| %>
   <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
 <% end %>
+</br>
+<%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-primary" %>
 

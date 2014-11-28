@@ -1,11 +1,11 @@
 <h2>Ajouter un nouveau Cocktail</h2>
 
-<%= form_for(@cocktail, html: { multipart: true }) do |f| %>
-  <%= f.label :name %><br />
+<%= bootstrap_form_for(@cocktail, html: { multipart: true }) do |f| %>
+
   <%= f.text_field :name %>
   <p>
-    <%= f.label :picture %>
+
     <%= f.file_field :picture %>
   </p>
-  <p><%= f.submit %></p>
+  <p><%= f.submit class: "btn btn-primary" %></p>
 <% end %>

@@ -1,8 +1,30 @@
 // Bootstrap over-ride FIRST
 
-//
-//
-//
+.wrapper {
+  background-image: url(https://farm3.staticflickr.com/2812/9450639697_7d997ceb84_o_d.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: absolute;
+}
+
+.container {
+  margin-top: 190px;
+}
+
+.black-left {
+  background-color: rgba(34, 35, 40, 0.4);
+  text-align: left;
+  padding: 0px 20px 30px 20px;
+}
+
+.navbar-brand {
+  fill: red;
+}
 
 // SCSS files installed with gems
 @import "bootstrap";
@@ -10,3 +32,5 @@
 @import "font-awesome";
 
 // Your SCSS files
+@import "navbar"
+
