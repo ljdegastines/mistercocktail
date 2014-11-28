@@ -1,0 +1,16 @@
+<%= bootstrap_form_for([@cocktail, @dose]) do |f| %>
+
+  <% if @dose.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @dose.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :content%>
+
+  <%= f.submit "Save dose", class: "btn btn-primary" %>
+<% end %>

@@ -1,52 +1,30 @@
 class DosesController < ApplicationController
-  before_action :set_dose, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @doses = Dose.all
-  end
-
-  def show
-
-  end
+  before_action :get_cocktail
 
   def new
-    @dose = Dose.new
+    @ingredients = Ingredient.all
+    @dose = Dose.new(cocktail: @cocktail)
   end
 
   def create
-    @dose = Dose.create(dose_params)
+    @dose = Dose.new(dose_params)
+    @dose.cocktail = @cocktail
+
     if @dose.save
-      redirect_to_dose_path(@dose)
+      redirect_to cocktail_path(@cocktail)
     else
       render :new
     end
   end
 
-  def edit
-
-  end
-
-  def update
-    @dose.update(dose_params)
-    if @dose.save
-      redirect_to_dose_path(@dose)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @dose.destroy
-    redirect_to_doses_path
-  end
-
-  private
+private
 
   def dose_params
-    params.require(:dose).permit(:name)
+    params.require(:dose).permit(:amount, :ingredient_id)
   end
 
-  def set_dose
-    @dose = Dose.find(params[:id])
+  def get_cocktail
+    @cocktail = Cocktail.find(params[:cocktail_id])
   end
+
 end

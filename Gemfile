@@ -1,7 +1,21 @@
 source 'https://rubygems.org'
 
+ gem 'unicorn'
+
 ruby '2.1.2'
 gem 'rails_12factor', group: :production
+
+gem 'bootstrap_form'
+gem 'bootstrap-sass', '~> 3.3.1'
+
+gem 'font-awesome-sass', '~> 4.2.0'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'

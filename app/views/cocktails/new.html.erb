@@ -1,0 +1,8 @@
+<h2>Ajouter un nouveau Cocktail</h2>
+
+<%= form_for(@cocktail) do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
